@@ -60,7 +60,7 @@ node(label) {
 		
   } catch(e) {
 		// Slack - 빌드 실패시
-
+ 
 	}
-}
+	}
 }
