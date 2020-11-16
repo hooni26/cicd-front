@@ -37,7 +37,7 @@ podTemplate(label: label, containers: [
 		tag = tag+"-"+timeStamp
 
 		// #3 빌드 Stage
-		stage('Build') {     container('npm') {         sh "npm install"     } } 
+		//stage('Build') {     container('npm') {         sh "npm install"     } } 
  
 		// #4 Sonarqube 정적분석 Stage
 		//stage('Static Code Analysis') {  
@@ -47,7 +47,7 @@ podTemplate(label: label, containers: [
 		//} 
  
 		// #5 컨테이너 이미지 생성 Stage
-		stage('Dockerizing') {     
+		/*stage('Dockerizing') {     
 			container('docker') {         
 				docker.withRegistry("${dockerRegistry}", "${credentialRegistry}") {             
 					sh "docker build -f ./Dockerfile -t ${image}:${tag} ${WORKSPACE}"              
@@ -56,9 +56,10 @@ podTemplate(label: label, containers: [
 					sh "docker push ${image}:latest"         }     
 			} 
 		} 
- 
+ 		*/
  
 		// #6 배포 Stage
+		/*
 		stage('Deploy') {     
 			container('kubectl') {         
 				sh "kubectl apply -n ${namespace} -f ${deployment}"         
@@ -66,7 +67,7 @@ podTemplate(label: label, containers: [
 				sh "kubectl get svc -n ${namespace}"      
 			} 
 		} 
-
+		*/
 		// Slack - 빌드 성공시
 
 
