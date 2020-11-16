@@ -38,6 +38,7 @@ node(label) {
 		// #5 컨테이너 이미지 생성 Stage
 		stage('Dockerizing') {     
 			container('docker') {         
+				sh "docker world"
 				docker.withRegistry("${dockerRegistry}", "${credentialRegistry}") {             
 					sh "docker build -f ./Dockerfile -t ${image}:${tag} ${WORKSPACE}"              
 					sh "docker push ${image}:${tag}"             
