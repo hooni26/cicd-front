@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-lab901 
+  name: frontend-lab17
   labels:
-    app: frontend-lab901 
+    app: frontend-lab17 
 spec:
   selector:
     matchLabels:
-      app: frontend-lab901 
+      app: frontend-lab17 
   replicas: 1
   template:
     metadata:
       labels:
-        app: frontend-lab901 
+        app: frontend-lab17 
     spec:
       containers:
-        - name: frontend-lab901 
-          image: hooni26/frontend-lab901 
+        - name: frontend-lab17 
+          image: hooni26/frontend-lab17 
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
