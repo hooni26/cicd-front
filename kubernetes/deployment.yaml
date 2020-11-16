@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend-lab17 
-          image: hooni26/frontend-lab17 
+          image: frontend-lab17 
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
