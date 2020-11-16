@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-lab901 
+  name: frontend-lab17 
   labels:
-    name: frontend-lab901 
+    name: frontend-lab17 
 spec:
   ports:
     - port: 3000
       targetPort: 3000
       protocol: TCP
   selector:
-    app: frontend-lab901 
+    app: frontend-lab17 
   type: NodePort
