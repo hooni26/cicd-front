@@ -50,7 +50,7 @@ node(label) {
  		
  
 		// #6 배포 Stage
-		sh "deploy world"
+	
 		stage('Deploy') {     
 			container('kubectl') {         
 				sh "kubectl apply -n ${namespace} -f ${deployment}"         
