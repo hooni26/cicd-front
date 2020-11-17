@@ -34,7 +34,13 @@ node(label) {
 		// #3 빌드 Stage
 		stage('Build') {     container('npm') {         sh "npm install"     } }
 		
-		
+		// #4 SonarQube 정적분석 Stage 
+		stage('Static Code Analysis') {  
+			container('scanner') {    
+				sh "sonar-scanner -Dsonar.projectName=${sonarQubeProject} -Dsonar.projectKey=${sonarQubeProject}  -Dsonar.host.url=${sonarQubeURL}    -Dsonar.projectBaseDir=./”  
+			} 
+		} 
+ 
 		// #5 컨테이너 이미지 생성 Stage
 		stage('Dockerizing') {     
 			container('docker') {         
