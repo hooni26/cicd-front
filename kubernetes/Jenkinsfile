@@ -37,7 +37,7 @@ node(label) {
 		// #4 SonarQube 정적분석 Stage 
 		stage('Static Code Analysis') {  
 			container('scanner') {    
-				sh "sonar-scanner -Dsonar.projectName=${sonarQubeProject} -Dsonar.projectKey=${sonarQubeProject}  -Dsonar.host.url=${sonarQubeURL}    -Dsonar.projectBaseDir=./”  
+				sh "sonar-scanner -Dsonar.projectName=${sonarQubeProject} -Dsonar.projectKey=${sonarQubeProject} -Dsonar.host.url=${sonarQubeURL} -Dsonar.projectBaseDir=./"  
 			} 
 		} 
  
